@@ -491,10 +491,13 @@ class FavoriteFoldersDialog(wx.Dialog):
 		self.listBox.SetColumnWidth (0,250)
 		if dictFolders == None:
 			return
-		if config['Options']['ShowPath'] == "1":
-			# Translators: Title of the second column of the list view.
-			self.listBox.InsertColumn(1, _('Address'))
-			self.listBox.SetColumnWidth (1,500)
+		try:
+			if config['Options']['ShowPath'] == "1":
+				# Translators: Title of the second column of the list view.
+				self.listBox.InsertColumn(1, _('Address'))
+				self.listBox.SetColumnWidth (1,500)
+		except KeyError:
+			pass
 		keys = list(dictFolders.keys())
 		keys.sort()
 		cont = 0
@@ -508,8 +511,11 @@ class FavoriteFoldersDialog(wx.Dialog):
 			except:
 				v = dictFolders [item]
 			self.listBox.Append ([k])
-			if config['Options']['ShowPath'] == "1":
-				self.listBox.SetStringItem (cont, 1, v)
+			try:
+				if config['Options']['ShowPath'] == "1":
+					self.listBox.SetStringItem (cont, 1, v)
+			except KeyError:
+				pass
 			cont += 1
 		self.listBox.Focus(index)
 		self.listBox.Select(index)

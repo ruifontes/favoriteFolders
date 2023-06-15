@@ -3,7 +3,7 @@
 
 ## Informações
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos Júnior, baseados no trabalho de Marcos Antonio de Oliveira"
-* actualizado em 14/06/2023
+* actualizado em 15/06/2023
 * Descarregar a [versão estável][1]
 * Compatibilidade: NVDA 2019.3 e seguintes
 
@@ -31,4 +31,4 @@ A inserção do caminho não funciona em campos de edição como os documentos d
 ## Comando
 WINDOWS+BACKSPACE - Abre a janela do extra.
 
-[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2023.06.14/favoriteFolders-2023.06.14.nvda-addon
+[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2023.06.15/favoriteFolders-2023.06.15.nvda-addon

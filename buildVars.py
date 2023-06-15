@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""Register favorite folders to provide quick access to them. Shortcut: WINDOWS+BACKSPACE"""),
 	# version
-	"addon_version": "2023.06.14",
+	"addon_version": "2023.06.15",
 	# Author(s)
 	"addon_author": "Rui Fontes, Ângelo Abrantes and Abel Passos do Nascimento Jr, based on work of Marcos Antonio de Oliveira",
 	# URL for the add-on documentation support
