@@ -3,7 +3,7 @@
 
 ## Bilgi
 * Yazarlar: Marcos Antonio de Oliveira'nın çalışmasına dayanan Rui Fontes, Ângelo Abrantes ve Abel Passos Júnior"
-* 15/06/2023 tarihinde güncellendi
+* 20/07/2023 tarihinde güncellendi
 * [Kararlı sürümü indirin][1]
 * Uyumluluk: NVDA 2019.3 ve sonrası.
 
@@ -31,4 +31,4 @@ Yolun eklenmesi, Microsoft Word belgeleri, Microsoft Outlook vb. düzenleme alan
 ## Komut
 WINDOWS+GERİ Sil - Eklenti iletişim kutusunu açar.
 
-[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2023.06.15/favoriteFolders-2023.06.15.nvda-addon
+[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2023.07.20/favoriteFolders-2023.07.20.nvda-addon

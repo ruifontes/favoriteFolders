@@ -120,9 +120,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		return folders
 
 	@script(
-	# For translators: Message to be announced during Keyboard Help
-	description = _("Opens a dialog box to register and open favorite folders."),
-	gesture = "kb:WINDOWS+Backspace")
+		# Translators: Message to be announced during Keyboard Help
+		description = _("Opens a dialog box to register and open favorite folders."),
+		gesture = "kb:WINDOWS+Backspace")
 	def script_startFavoriteFolders(self, gesture):
 		path = ' '
 		focusObj = api.getFocusObject()
@@ -233,9 +233,7 @@ class FavoriteFoldersDialog(wx.Dialog):
 		config = ConfigObj(_ffIniFile, encoding = "utf-8")
 		self.chkAddress = wx.CheckBox(self, wx.ID_ANY, _("&Show paths in the list"))
 		if "Options" in config.sections:
-			print("Certo")
 			if config['Options']['ShowPath'] == "1":
-				print("1")
 				self.chkAddress.SetValue(True)
 		sizer_1.Add(self.chkAddress, 0, 0, 0)
 

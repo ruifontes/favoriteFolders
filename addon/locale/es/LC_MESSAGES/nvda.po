@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Favorite Folders\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-06-14 01:43+0100\n"
-"PO-Revision-Date: 2023-06-14 01:50+0100\n"
+"POT-Creation-Date: 2023-07-20 23:45+0100\n"
+"PO-Revision-Date: 2023-07-20 23:47+0100\n"
 "Last-Translator: Marcos Antonio de Oliveira <mao-mail@uol.com.br>\n"
 "Language-Team: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language: es\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: c:/users/marcos antonio/appdata/roaming/nvda/addons/"
 "favorite Folders/GlobalPlugins\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Favorite folders"
 msgstr "Carpetas favoritas"
 
-#. For translators: Message to be announced during Keyboard Help
+#. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\favoriteFolders\__init__.py:124
 msgid "Opens a dialog box to register and open favorite folders."
 msgstr "Abrir un cuadro de diálogo para registrar o abrir carpetas favoritas."
@@ -44,57 +44,57 @@ msgstr "Lista de carpetas favoritas"
 msgid "&Show paths in the list"
 msgstr "&Ver las direcciones en la lista"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:242
+#: addon\globalPlugins\favoriteFolders\__init__.py:240
 msgid "&Add folder"
 msgstr "&Añadir carpeta"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:245
+#: addon\globalPlugins\favoriteFolders\__init__.py:243
 msgid "&Open folder"
 msgstr "Abrir carpe&ta"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:248
+#: addon\globalPlugins\favoriteFolders\__init__.py:246
 msgid "Write in the e&dit box"
 msgstr "Escriba en el cuadro de e&dición"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:251
+#: addon\globalPlugins\favoriteFolders\__init__.py:249
 msgid "Re&name"
 msgstr "Re&nombrar"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:254
+#: addon\globalPlugins\favoriteFolders\__init__.py:252
 msgid "&Remove"
 msgstr "&Eliminar"
 
 #. Translators: Message dialog box to add a new folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:308
+#: addon\globalPlugins\favoriteFolders\__init__.py:306
 msgid "Enter a nickname for the folder"
 msgstr "Introducir un nombre de referencia para la carpeta."
 
 #. Translators: Announcement that the folder name already exists in the list.
-#: addon\globalPlugins\favoriteFolders\__init__.py:339
-#: addon\globalPlugins\favoriteFolders\__init__.py:402
+#: addon\globalPlugins\favoriteFolders\__init__.py:337
+#: addon\globalPlugins\favoriteFolders\__init__.py:400
 msgid "There is already a folder with this nickname!"
 msgstr "¡Ya existe una carpeta con esta referencia!"
 
 #. Translators: Message dialog to rename the nickname  of the selected folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:375
+#: addon\globalPlugins\favoriteFolders\__init__.py:373
 #, python-format
 msgid "Enter a new nickname for %s"
 msgstr "Introducir un nuevo nombre de referencia para %s."
 
 #. Translators: Message dialog box to remove the selected folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:412
+#: addon\globalPlugins\favoriteFolders\__init__.py:410
 #, python-format
 msgid "Are you sure you want to remove %s?"
 msgstr ""
 "¿Estás seguro de que quieres eliminar %s de tu lista de carpetas favoritas?"
 
 #. Translators: Title of the first column of the list view.
-#: addon\globalPlugins\favoriteFolders\__init__.py:490
+#: addon\globalPlugins\favoriteFolders\__init__.py:488
 msgid "Nickname"
 msgstr "Referencia"
 
 #. Translators: Title of the second column of the list view.
-#: addon\globalPlugins\favoriteFolders\__init__.py:496
+#: addon\globalPlugins\favoriteFolders\__init__.py:495
 msgid "Address"
 msgstr "Dirección"
 

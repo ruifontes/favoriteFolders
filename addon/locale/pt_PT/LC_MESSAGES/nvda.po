@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Favorite Folders\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-06-14 01:43+0100\n"
-"PO-Revision-Date: 2023-06-14 02:03+0100\n"
+"POT-Creation-Date: 2023-07-20 23:45+0100\n"
+"PO-Revision-Date: 2023-07-20 23:49+0100\n"
 "Last-Translator: Marcos Antonio de Oliveira <mao-mail@uol.com.br>\n"
 "Language-Team: Equipa luso-brasileira do NVDA (Abel Passos Júnior, Ângelo "
 "Abrantes, Rui Fontes e Wendrill Brandão)\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.1\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Poedit-Basepath: c:/users/marcos antonio/appdata/roaming/nvda/addons/"
 "favorite Folders/GlobalPlugins\n"
 "X-Poedit-SearchPath-0: FavoriteFolders\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Favorite folders"
 msgstr "Pastas favoritas"
 
-#. For translators: Message to be announced during Keyboard Help
+#. Translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\favoriteFolders\__init__.py:124
 msgid "Opens a dialog box to register and open favorite folders."
 msgstr "Abre uma janela onde pode registar ou abrir uma pasta favorita."
@@ -44,56 +44,56 @@ msgstr "Lista de pastas favoritas"
 msgid "&Show paths in the list"
 msgstr "Mostrar &caminho na lista"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:242
+#: addon\globalPlugins\favoriteFolders\__init__.py:240
 msgid "&Add folder"
 msgstr "&Adicionar pasta"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:245
+#: addon\globalPlugins\favoriteFolders\__init__.py:243
 msgid "&Open folder"
 msgstr "Abrir &pasta"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:248
+#: addon\globalPlugins\favoriteFolders\__init__.py:246
 msgid "Write in the e&dit box"
 msgstr "Escrever no campo de &edição"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:251
+#: addon\globalPlugins\favoriteFolders\__init__.py:249
 msgid "Re&name"
 msgstr "Re&nomear"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:254
+#: addon\globalPlugins\favoriteFolders\__init__.py:252
 msgid "&Remove"
 msgstr "&Remover"
 
 #. Translators: Message dialog box to add a new folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:308
+#: addon\globalPlugins\favoriteFolders\__init__.py:306
 msgid "Enter a nickname for the folder"
 msgstr "Indique o nome para a pasta."
 
 #. Translators: Announcement that the folder name already exists in the list.
-#: addon\globalPlugins\favoriteFolders\__init__.py:339
-#: addon\globalPlugins\favoriteFolders\__init__.py:402
+#: addon\globalPlugins\favoriteFolders\__init__.py:337
+#: addon\globalPlugins\favoriteFolders\__init__.py:400
 msgid "There is already a folder with this nickname!"
 msgstr "Já existe uma pasta com este nome!"
 
 #. Translators: Message dialog to rename the nickname  of the selected folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:375
+#: addon\globalPlugins\favoriteFolders\__init__.py:373
 #, python-format
 msgid "Enter a new nickname for %s"
 msgstr "Indique o novo nome para %s."
 
 #. Translators: Message dialog box to remove the selected folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:412
+#: addon\globalPlugins\favoriteFolders\__init__.py:410
 #, python-format
 msgid "Are you sure you want to remove %s?"
 msgstr "Tem a certeza que deseja remover %s da lista de pastas favoritas?"
 
 #. Translators: Title of the first column of the list view.
-#: addon\globalPlugins\favoriteFolders\__init__.py:490
+#: addon\globalPlugins\favoriteFolders\__init__.py:488
 msgid "Nickname"
 msgstr "Nome"
 
 #. Translators: Title of the second column of the list view.
-#: addon\globalPlugins\favoriteFolders\__init__.py:496
+#: addon\globalPlugins\favoriteFolders\__init__.py:495
 msgid "Address"
 msgstr "Caminho"
 
