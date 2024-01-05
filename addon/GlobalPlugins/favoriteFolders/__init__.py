@@ -3,10 +3,9 @@
 # Registers the most used folders.
 # It can helps in the process of saving files, because you can enter the address at the beginning of a editable text line.
 # Shortcut: WINDOWS+BACKSPACE
-# written by Rui Fontes, and Ângelo Abrantes based on a work of Marcos Antonio de Oliveira.
-# Copyright (C) 2020-2023 Rui Fontes <rui.fontes@tiflotecnia.com>
+# written by Rui Fontes, and Ângelo Abrantes with the colaboration of Abel Passos do Nascimento Jr based on a work of Marcos Antonio de Oliveira.
+# Copyright (C) 2020-2024 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
-# See the file COPYING for more details.
 
 # Import the necessary modules
 import globalPluginHandler
@@ -17,10 +16,10 @@ import os
 import api
 import ui
 import re
-import windowUtils
 import controlTypes
+import comtypes.client
+from comtypes.client import CreateObject as COMCreate
 from ctypes import windll
-from sys import getwindowsversion
 import NVDAObjects
 from keyboardHandler import KeyboardInputGesture
 import winUser
@@ -28,43 +27,24 @@ from . import win32con
 from configobj import ConfigObj
 from time import sleep
 from scriptHandler import script
-from threading import Thread, Event
-# For translation process
+import socket
+try:
+	import pathlib
+	from pathlib import Path as pathNetwork
+except:
+	from . import pathlib
+	from .pathlib import Path as pathNetwork
 import addonHandler
 # To start the translation process
 addonHandler.initTranslation()
 
 # globalVars
-#_ffIniFile = os.path.join (os.path.dirname(__file__),'FavoriteFolders.ini')
 _ffIniFile = os.path.abspath(os.path.join(globalVars.appArgs.configPath, "FavoriteFolders.ini"))
 # Translators: Title of add-on, present in the dialog boxes.
 title = _("Favorite folders")
 showPath = False
 dictFolders = {}
 newFolder = ""
-
-
-class TimeoutThread(Thread):
-	def __init__(self, target, args):
-		super().__init__(target=target, args=args, daemon=True)
-		self.target = target
-		self.args = args
-
-	def run_with_timeout(self, timeout):
-		finish_event = Event()
-
-		def helper():
-			self.run()
-			finish_event.set()
-
-		helper_thread = Thread(target=helper)
-		helper_thread.start()
-		helper_thread.join(timeout)
-
-		if helper_thread.is_alive():
-			pass
-		else:
-			return self.args[0] #self.target(*self.args)
 
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
@@ -74,45 +54,91 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.dialog = None
 
 	def check_path(self, path):
+		# function to check if path starts with a letter or is a directory
+		# If it is a path returns it, otherwise returns None
 		try:
 			driveLetter = path [:3]
 			driveType = windll.kernel32.GetDriveTypeW(driveLetter)
 			if driveType == 3: # fixed disk
-				self.result = path
-			elif not os.path.isdir(path):
-				self.result = None
-			else:
-				self.result = path
+				return path
 		except:
-			self.result = path
+			return None
+
+	def check_network_Active(self, path):
+		# Check if IP is active
+		try:
+			host, folder = path[2:].split('\\', 1)
+			host = host.strip('\\')
+			ip = socket.gethostbyname(host)
+			with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+				s.settimeout(1)
+				s.connect((ip, 445))  # Port 445 is used for Microsoft-DS
+			if pathNetwork(path).exists():
+				# IP active
+				if os.path.isdir(path):
+					# It is a folder
+					return True
+				else:
+					# It is not a folder
+					return None
+			else:
+				# Connection not established
+				return None
+		except (socket.timeout, ConnectionRefusedError):
+			# Connection problem
+			return None
 
 	def readConfig (self):
+		# Function to load archive parameters and check if paths are active
 		if not os.path.isfile (_ffIniFile):
 			return None
+		# Opens the INI file
 		config = ConfigObj(_ffIniFile, encoding = "utf-8")
+		# Check if OPTIONS exists, and if so, load the value.
 		if "options" in config.sections:
 			try:
 				showPath = config['Options']['ShowPath'] == '1'
 			except:
 				showPath = False
+		# Loads the existent folders
 		try:
 			folders = config['Folders']
+			# Folders loaded
 		except KeyError:
+			# No folders to load
 			folders = {}
 		total = len(folders.keys())
 		if not total:
 			return None
+		# Check each folder if exists. If not, remove it
+		# Store IP address if network active
+		networkListUnactive = []
+		networkListActive = []
 		for item in folders.keys ():
 			try:
 				path = folders[item].decode('utf-8')
 			except:
 				path = folders[item]
-			thread = TimeoutThread(target=self.check_path, args=(path,))
-			result = thread.run_with_timeout(timeout = 0.001)
-			if result is None or not result:
-				folders.__delitem__(item)
-			elif self.result is None:
-				folders.__delitem__(item)
+			# If is network folder
+			if path[:2] == r'\\':
+				# check if this IP is on list of networks unactive
+				host, folderTemp = path[2:].split('\\', 1)
+				if host not in networkListActive:
+					# Not in actives IP
+					if host  in networkListUnactive:
+						folders.__delitem__(item)
+					elif not  self.check_network_Active(path):
+						networkListUnactive += [host]
+						folders.__delitem__(item)
+					else:
+						networkListActive += [host]
+				else:
+					if not os.path.isdir(path):
+						folders.__delitem__(item)
+			else:
+				result = self.check_path(path)
+				if result is None or not result:
+					folders.__delitem__(item)
 		if not len (folders.keys()):
 			folders = None
 		global dictFolders
@@ -120,51 +146,39 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		return folders
 
 	@script(
-		# Translators: Message to be announced during Keyboard Help
+		# For translators: Message to be announced during Keyboard Help
 		description = _("Opens a dialog box to register and open favorite folders."),
 		gesture = "kb:WINDOWS+Backspace")
 	def script_startFavoriteFolders(self, gesture):
-		path = ' '
-		focusObj = api.getFocusObject()
-		# If the focus is on windows explorer, gets the address of the folder.
-		if 'explorer' in focusObj.appModule.appModuleName:
-			hForeground = api.getForegroundObject().windowHandle
-			h = self.findDescendantWindow(hForeground, 1001) 
-			if not h:
-				h = self.findDescendantWindow(hForeground, 41477)
-				h = self.findDescendantWindow(h, "Edit")
-			if h:
-				obj = NVDAObjects.IAccessible.getNVDAObjectFromEvent (h, -4, 0)
-				if getwindowsversion().major == 5: # windows xp.
-					path = obj.value
-				else:
-					name = obj.name
-					pattern = re.compile ('\w:\\\\.{0,}')
-					result = re.findall (pattern, name)
-					if result !=[]:
-						path = result [0]
-				if path[-1] != '\\':
-					path += '\\'
-				if  not os.path.isdir (path):
-					path = None
-		else:
+		path = ""
+		# getting folder path
+		# We check if we are in the Windows Explorer.
+		fg = api.getForegroundObject()
+		if fg.appModule.appName != "explorer":
+			# To avoid the Add option
 			path = None
+		else:
+			shell = COMCreate("shell.application")
+			# We go through the list of open Windows Explorers to find the one that has the focus.
+			for window in shell.Windows():
+				try:
+					if window.hwnd and window.hwnd == fg.windowHandle:
+						# We are in the selected window, so get the path...
+						focusedItem=window.Document.FocusedItem
+						targetFile= focusedItem.path
+						path = os.path.dirname(targetFile)+"\\"
+						break
+				except:
+					pass
+			else:
+				# loop exhausted. We are in Desktop
+				path = os.path.join(os.path.join(os.environ["USERPROFILE"]), "Desktop")
 		global newFolder
 		newFolder = path
 		self.showFavoriteFoldersDialog ()
 
-	def findDescendantWindow (self, h, c):
-		# Returns the handle of a window with a given class or control id sought from a specified window.
-		try:
-			if type (c) is int:
-				return windowUtils.findDescendantWindow (h, controlID=c)
-			else:
-				return windowUtils.findDescendantWindow (h, className=c)
-		except LookupError:
-			return False
-
 	def showFavoriteFoldersDialog (self):
-		global newFolder
+		global newFolder, dictFolders
 		# Displays the add-on dialog box.
 		dictFolders = self.readConfig()
 		if dictFolders is None and newFolder is None:
@@ -203,7 +217,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				api.setMouseObject(lastFocus)
 				api.moveMouseToNVDAObject(lastFocus)
 			self.dialog.writtenAddress = False	
-
 		nextHandler()
 
 
@@ -220,7 +233,6 @@ class FavoriteFoldersDialog(wx.Dialog):
 		self.dialogActive = False
 		self.writtenAddress = False
 		self.SetTitle(title)
-
 
 		sizer_1 = wx.BoxSizer(wx.VERTICAL)
 
@@ -274,14 +286,14 @@ class FavoriteFoldersDialog(wx.Dialog):
 		self.Bind(wx.EVT_BUTTON, self.onRename, self.renameButton)
 		self.Bind(wx.EVT_BUTTON, self.onRemove, self.removeButton)
 		self.listBox.Bind(wx.EVT_KEY_DOWN, self.onKeyPress)
-		wx.EVT_KILL_FOCUS (self.listBox,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.chkAddress,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.addButton,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.openButton,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.pastButton,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.renameButton,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.removeButton,self.onFocusLost)
-		wx.EVT_KILL_FOCUS (self.button_CLOSE,self.onFocusLost)
+		self.listBox.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.chkAddress.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.addButton.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.openButton.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.pastButton.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.renameButton.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.removeButton.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
+		self.button_CLOSE.Bind(wx.EVT_KILL_FOCUS,self.onFocusLost)
 
 	def onCheckAddress (self, evt):
 		# enables or disables the display of addresses of the folders in the list.
@@ -303,7 +315,7 @@ class FavoriteFoldersDialog(wx.Dialog):
 		evt.Skip()
 		self.dialogActive = True
 		# Translators: Message dialog box to add a new folder.
-		dlg = wx.TextEntryDialog(gui.mainFrame,_("Enter a nickname for the folder"), title, newFolder)
+		dlg = wx.TextEntryDialog(gui.mainFrame,_("Enter a nickname for the folder"), title, newFolder.split("\\")[-2])
 		def callback (result):
 			global dictFolders, newFolder
 			if  result == wx.ID_OK:
@@ -414,7 +426,8 @@ class FavoriteFoldersDialog(wx.Dialog):
 			config.write()
 			self.listBox.DeleteItem(index)
 			if self.listBox.GetItemCount():
-				self.listBox.Select(self.listBox.GetFocusedItem())
+				self.listBox.SetFocus()
+				self.listBox.Select(0)
 			else:
 				self.setButtons()
 		self.dialogActive = False
@@ -494,10 +507,10 @@ class FavoriteFoldersDialog(wx.Dialog):
 				# Translators: Title of the second column of the list view.
 				self.listBox.InsertColumn(1, _('Address'))
 				self.listBox.SetColumnWidth (1,500)
-		except KeyError:
+		except:
 			pass
-		keys = list(dictFolders.keys())
-		keys.sort()
+		keys1 = list(dictFolders.keys())
+		keys = sorted(keys1, key=lambda x: (not x.startswith('_'), x))
 		cont = 0
 		for item in keys:
 			try:
@@ -512,7 +525,7 @@ class FavoriteFoldersDialog(wx.Dialog):
 			try:
 				if config['Options']['ShowPath'] == "1":
 					self.listBox.SetStringItem (cont, 1, v)
-			except KeyError:
+			except:
 				pass
 			cont += 1
 		self.listBox.Focus(index)
