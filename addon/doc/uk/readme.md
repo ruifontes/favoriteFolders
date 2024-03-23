@@ -3,7 +3,7 @@
 
 ## Інформація
 * Автори: Rui Fontes, Ângelo Abrantes і Abel Passos Júnior, на основі роботи Marcos Antonio з Oliveira"
-* Оновлено 04/01/2024
+* Оновлено 22/03/2024
 * Завантажити [стабільну версію][1]
 * Сумісність: NVDA 2019.3 і вище.
 
@@ -31,4 +31,4 @@
 ## Команда
 WINDOWS+бекспейс - відкриває діалог додатка.
 
-[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.01.04/favoriteFolders-2024.01.04.nvda-addon
+[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.03.22/favoriteFolders-2024.03.22.nvda-addon

@@ -56,10 +56,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def check_path(self, path):
 		# function to check if path starts with a letter or is a directory
 		# If it is a path returns it, otherwise returns None
+		path = path
 		try:
 			driveLetter = path [:3]
 			driveType = windll.kernel32.GetDriveTypeW(driveLetter)
-			if driveType == 3: # fixed disk
+			if driveType == 2 or 3: # fixed disk
 				return path
 		except:
 			return None

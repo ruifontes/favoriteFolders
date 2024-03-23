@@ -3,7 +3,7 @@
 
 ## Information
 * Authors: Rui Fontes, Ângelo Abrantes and Abel Passos Júnior, based on the work of Marcos Antonio de Oliveira"
-* Updated on 04/01/2024
+* Updated on 22/03/2024
 * Download the [stable version][1]
 * Compatibility: NVDA 2019.3 and beyond.
 
@@ -31,4 +31,4 @@ Inserting the path does not work in editing fields like Microsoft Word documents
 ## Command
 WINDOWS+BACKSPACE - Opens the add-on dialog.
 
-[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.01.04/favoriteFolders-2024.01.04.nvda-addon
+[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.03.22/favoriteFolders-2024.03.22.nvda-addon

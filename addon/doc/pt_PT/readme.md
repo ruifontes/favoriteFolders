@@ -1,9 +1,10 @@
 # Pastas favoritas
 
 
+
 ## Informações
 * Autores: Rui Fontes, Ângelo Abrantes e Abel Passos Júnior, baseados no trabalho de Marcos Antonio de Oliveira"
-* actualizado em 04/01/2024
+* actualizado em 22/03/2024
 * Descarregar a [versão estável][1]
 * Compatibilidade: NVDA 2019.3 e seguintes
 
@@ -31,4 +32,4 @@ A inserção do caminho não funciona em campos de edição como os documentos d
 ## Comando
 WINDOWS+BACKSPACE - Abre a janela do extra.
 
-[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.01.04/favoriteFolders-2024.01.04.nvda-addon
+[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.03.22/favoriteFolders-2024.03.22.nvda-addon
