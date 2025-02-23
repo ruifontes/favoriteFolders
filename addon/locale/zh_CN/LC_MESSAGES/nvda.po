@@ -1,1 +1,148 @@
 
+msgid ""
+msgstr ""
+"Project-Id-Version: Favorite Folders\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2023-07-20 23:45+0100\n"
+"PO-Revision-Date: 2024-04-14 13:53+0800\n"
+"Last-Translator: Alan <alanzhangcn22@gmail.com>\n"
+"Language-Team: nvdacn.com\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: c:/users/marcos antonio/appdata/roaming/nvda/addons/"
+"favorite Folders/GlobalPlugins\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: FavoriteFolders\n"
+
+#. Translators: Title of add-on, present in the dialog boxes.
+#: addon\globalPlugins\favoriteFolders\__init__.py:41
+msgid "Favorite folders"
+msgstr "文件夹收藏夹"
+
+#. Translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\favoriteFolders\__init__.py:124
+msgid "Opens a dialog box to register and open favorite folders."
+msgstr "打开一个对话框以注册和打开收藏夹。"
+
+#. Translators: Announced when the focus is not on the Windows Explorer and there is no registered folders.
+#: addon\globalPlugins\favoriteFolders\__init__.py:172
+msgid ""
+"You do not have added folders and is not in the windows explorer window to "
+"make a record"
+msgstr "您没有添加文件夹，也没有在windows资源管理器窗口中进行记录"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:227
+msgid "Favorite folders list"
+msgstr "文件夹收藏夹列表"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:234
+msgid "&Show paths in the list"
+msgstr "在列表中显示路径(&S)"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:240
+msgid "&Add folder"
+msgstr "添加文件夹（&A）"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:243
+msgid "&Open folder"
+msgstr "打开文件夹（&O）"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:246
+msgid "Write in the e&dit box"
+msgstr "在编辑框中写入（&D）"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:249
+msgid "Re&name"
+msgstr "重命名（&N）"
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:252
+msgid "&Remove"
+msgstr "移除（&R）"
+
+#. Translators: Message dialog box to add a new folder.
+#: addon\globalPlugins\favoriteFolders\__init__.py:306
+msgid "Enter a nickname for the folder"
+msgstr "输入文件夹的昵称"
+
+#. Translators: Announcement that the folder name already exists in the list.
+#: addon\globalPlugins\favoriteFolders\__init__.py:337
+#: addon\globalPlugins\favoriteFolders\__init__.py:400
+msgid "There is already a folder with this nickname!"
+msgstr "已经有一个具有此昵称的文件夹！"
+
+#. Translators: Message dialog to rename the nickname  of the selected folder.
+#: addon\globalPlugins\favoriteFolders\__init__.py:373
+#, python-format
+msgid "Enter a new nickname for %s"
+msgstr "输入 %s 的新昵称"
+
+#. Translators: Message dialog box to remove the selected folder.
+#: addon\globalPlugins\favoriteFolders\__init__.py:410
+#, python-format
+msgid "Are you sure you want to remove %s?"
+msgstr "您确定要删除 %s 吗？"
+
+#. Translators: Title of the first column of the list view.
+#: addon\globalPlugins\favoriteFolders\__init__.py:488
+msgid "Nickname"
+msgstr "昵称"
+
+#. Translators: Title of the second column of the list view.
+#: addon\globalPlugins\favoriteFolders\__init__.py:495
+msgid "Address"
+msgstr "地址"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: buildVars.py:23
+msgid "Favorite folders - Register favorite folders"
+msgstr "文件夹收藏夹 - 注册文件夹收藏夹"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"Register favorite folders to provide quick access to them. Shortcut: "
+"WINDOWS+BACKSPACE"
+msgstr "注册文件夹收藏夹以提供对它们的快速访问。快捷键：WINDOWS+退格键"
+
+#~ msgid "Ab&out"
+#~ msgstr "Ace&rca de"
+
+#~ msgid "&Close"
+#~ msgstr "&Cerrar"
+
+#, python-format
+#~ msgid "File not found: %s."
+#~ msgstr "Archivo no encontrado: %s."
+
+#~ msgid "Enter a nickname"
+#~ msgstr "Entre com um nome de referência para a pasta"
+
+#~ msgid "&Past in editable text"
+#~ msgstr "&Colar em caixa de texto"
+
+#~ msgid "Enter a new name for %s"
+#~ msgstr "Entre com uma nova referência para %s"
+
+#~ msgid "There is already a folder with this reference!"
+#~ msgstr "Já existe uma pasta com este nome!"
+
+#~ msgid "Add to group call"
+#~ msgstr "Adicionar à chamada em grupo"
+
+#~ msgid "Added to the conference"
+#~ msgstr "Adicionada a conferência"
+
+#~ msgid "Could not be added to the conference"
+#~ msgstr ""
+#~ "Não foi possível adicionar a chamada a conferência.Para utilizar esse "
+#~ "recurso você precisa ser o administrador da conferência."
+
+#~ msgid "Notify window not found"
+#~ msgstr "Janela de notificação de chamada não encontrada"
