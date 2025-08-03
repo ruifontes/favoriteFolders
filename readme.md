@@ -31,4 +31,4 @@ Inserting the path does not work in editing fields like Microsoft Word documents
 ## Command
 WINDOWS+BACKSPACE - Opens the add-on dialog.
 
-[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2024.03.22/favoriteFolders-2024.03.22.nvda-addon
+[1]: https://github.com/ruifontes/favoriteFolders/releases/download/2025.08.03/favoriteFolders-2025.08.03.nvda-addon

@@ -4,7 +4,7 @@
 # It can helps in the process of saving files, because you can enter the address at the beginning of a editable text line.
 # Shortcut: WINDOWS+BACKSPACE
 # written by Rui Fontes, and Ângelo Abrantes with the colaboration of Abel Passos do Nascimento Jr based on a work of Marcos Antonio de Oliveira.
-# Copyright (C) 2020-2024 Rui Fontes <rui.fontes@tiflotecnia.com>
+# Copyright (C) 2020-2025 Rui Fontes <rui.fontes@tiflotecnia.com>
 # This file is covered by the GNU General Public License.
 
 # Import the necessary modules
