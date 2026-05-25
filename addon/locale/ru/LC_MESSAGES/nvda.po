@@ -1,215 +1,209 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: 'favoriteFolders' '2024.03.22'\n"
+"Project-Id-Version: favoriteFile 1.0\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2026-05-25 14:29+0100\n"
-"PO-Revision-Date: 2026-05-25 14:44+0100\n"
-"Last-Translator: Alan <alanzhangmw@outlook.com>\n"
-"Language-Team: \n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2026-05-25 14:42+0100\n"
+"Last-Translator: Chai Chaimee <chaicm75@gmail.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.8\n"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:26
-#, fuzzy
-#| msgid "Favorite folders"
 msgid "Favorite files"
-msgstr "文件夹收藏夹"
+msgstr "Избранные файлы"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:202
 msgid "Folders cannot be added. Only files are allowed."
-msgstr ""
+msgstr "Папки добавить нельзя. Разрешены только файлы."
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:215
-#, fuzzy
-#| msgid ""
-#| "You do not have added folders and is not in the windows explorer window "
-#| "to make a record"
 msgid ""
 "You have no favorite files and are not in a Windows Explorer window to add "
 "one"
-msgstr "您没有添加的文件夹，也没有在Windows 资源管理器窗口中进行记录"
+msgstr ""
+"У вас нет избранных файлов, и вы не находитесь в окне Проводника Windows для "
+"добавления"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:258
 msgid "Display name"
-msgstr ""
+msgstr "Отображаемое имя"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:259
 msgid "Path"
-msgstr ""
+msgstr "Путь"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:263
 #: addon\globalPlugins\favoriteFolders\__init__.py:256
 msgid "&Show paths in the list"
-msgstr "在列表中显示路径(&S)"
+msgstr "&Показывать пути в списке"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:266
 msgid "Sort order:"
-msgstr ""
+msgstr "Порядок сортировки:"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:270
+#, fuzzy
+#| msgid "Custom order (drag & pin allowed)"
 msgid "Custom order (drag and pin allowed)"
-msgstr ""
+msgstr "Пользовательский порядок (перетаскивание и закрепление разрешено)"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:271
 msgid "A-Z (uppercase)"
-msgstr ""
+msgstr "A-Z (по возрастанию, заглавные)"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:272
 msgid "Z-A (lowercase)"
-msgstr ""
+msgstr "Z-A (по убыванию, строчные)"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:288
 #: addon\globalPlugins\favoriteFolders\__init__.py:262
 msgid "&Add"
-msgstr ""
+msgstr "&Добавить"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:289
 #: addon\globalPlugins\favoriteFolders\__init__.py:265
 msgid "&Open"
-msgstr ""
+msgstr "&Открыть"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:290
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:325
 msgid "&Edit"
-msgstr ""
+msgstr "&Редактировать"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:291
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:326
 #: addon\globalPlugins\favoriteFolders\__init__.py:274
 msgid "&Remove"
-msgstr "移除(&R)"
+msgstr "&Удалить"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:322
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:398
 msgid "&Pin to top"
-msgstr ""
+msgstr "&Закрепить сверху"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:323
 msgid "Move &up"
-msgstr ""
+msgstr "Переместить &вверх"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:324
 msgid "Move &down"
-msgstr ""
+msgstr "Переместить &вниз"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:396
 msgid "&Unpin"
-msgstr ""
+msgstr "&Открепить"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:422
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:431
 msgid "Unpinned {}"
-msgstr ""
+msgstr "{} откреплено"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:473
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:487
 msgid "Pinned {} to top"
-msgstr ""
+msgstr "{} закреплено сверху"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:513
 msgid "No file selected to add"
-msgstr ""
+msgstr "Файл для добавления не выбран"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:517
-#, fuzzy
-#| msgid "Enter a nickname for the folder"
 msgid "Enter display name for the file"
-msgstr "输入文件夹的昵称"
+msgstr "Введите отображаемое имя файла"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:521
 msgid "Display name cannot be empty"
-msgstr ""
+msgstr "Отображаемое имя не может быть пустым"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:525
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:567
 msgid "This display name already exists!"
-msgstr ""
+msgstr "Такое отображаемое имя уже существует!"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:534
 msgid "Added: {}"
-msgstr ""
+msgstr "Добавлено: {}"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:549
 msgid "File not found"
-msgstr ""
+msgstr "Файл не найден"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:560
-#, fuzzy
-#| msgid "Enter a new nickname for %s"
 msgid "Enter new display name"
-msgstr "输入 %s 的新昵称"
+msgstr "Введите новое отображаемое имя"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:588
 msgid "Display name updated to {}"
-msgstr ""
+msgstr "Отображаемое имя изменено на {}"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:598
-#, fuzzy
-#| msgid "Are you sure you want to remove %s?"
 msgid "Are you sure you want to remove {}?"
-msgstr "您确定要删除 %s 吗？"
+msgstr "Вы уверены, что хотите удалить {}?"
 
 #: addon\globalPlugins\favoriteFolders\init_FavFiles.py:610
-#, fuzzy
-#| msgid "&Remove"
 msgid "Removed {}"
-msgstr "移除(&R)"
+msgstr "{} удалено"
 
 #. Translators: Title of add-on, present in the dialog boxes.
 #: addon\globalPlugins\favoriteFolders\__init__.py:45
+#, fuzzy
+#| msgid "Favorite files"
 msgid "Favorite folders"
-msgstr "文件夹收藏夹"
+msgstr "Избранные файлы"
 
 #. For translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\favoriteFolders\__init__.py:153
 msgid "Opens a dialog box to register and open favorite folders."
-msgstr "打开一个对话框以注册或打开文件夹收藏夹。"
+msgstr ""
 
 #. Translators: Announced when the focus is not on the Windows Explorer and there is no registered folders.
 #: addon\globalPlugins\favoriteFolders\__init__.py:189
+#, fuzzy
+#| msgid ""
+#| "You have no favorite files and are not in a Windows Explorer window to "
+#| "add one"
 msgid ""
 "You do not have added folders and is not in the windows explorer window to "
 "make a record"
-msgstr "您没有添加的文件夹，也没有在Windows 资源管理器窗口中进行记录"
+msgstr ""
+"У вас нет избранных файлов, и вы не находитесь в окне Проводника Windows для "
+"добавления"
 
 #. For translators: Message to be announced during Keyboard Help
 #: addon\globalPlugins\favoriteFolders\__init__.py:212
-#, fuzzy
-#| msgid "Opens a dialog box to register and open favorite folders."
 msgid "Opens a dialog box to register and open favorite files."
-msgstr "打开一个对话框以注册或打开文件夹收藏夹。"
+msgstr ""
 
 #: addon\globalPlugins\favoriteFolders\__init__.py:249
+#, fuzzy
+#| msgid "Favorite files"
 msgid "Favorite folders list"
-msgstr "文件夹收藏夹列表"
+msgstr "Избранные файлы"
 
 #: addon\globalPlugins\favoriteFolders\__init__.py:268
 msgid "Write in the e&dit box"
-msgstr "在编辑框中输入"
+msgstr ""
 
 #: addon\globalPlugins\favoriteFolders\__init__.py:271
 msgid "Re&name"
-msgstr "重命名(&N)"
+msgstr ""
 
 #. Translators: Message dialog box to add a new folder.
 #: addon\globalPlugins\favoriteFolders\__init__.py:328
+#, fuzzy
+#| msgid "Enter display name for the file"
 msgid "Enter a nickname for the folder"
-msgstr "输入文件夹的昵称"
+msgstr "Введите отображаемое имя файла"
 
 #. Translators: Announcement that the folder name already exists in the list.
 #: addon\globalPlugins\favoriteFolders\__init__.py:359
 #: addon\globalPlugins\favoriteFolders\__init__.py:425
 msgid "There is already a folder with this nickname!"
-msgstr "已存在具有此昵称的文件夹！"
+msgstr ""
 
 #: addon\globalPlugins\favoriteFolders\__init__.py:373
 #, python-format
@@ -224,48 +218,44 @@ msgstr ""
 
 #. Translators: Message dialog to rename the nickname  of the selected folder.
 #: addon\globalPlugins\favoriteFolders\__init__.py:398
-#, python-format
+#, fuzzy, python-format
+#| msgid "Enter new display name"
 msgid "Enter a new nickname for %s"
-msgstr "输入 %s 的新昵称"
+msgstr "Введите новое отображаемое имя"
 
 #. Translators: Message dialog box to remove the selected folder.
 #: addon\globalPlugins\favoriteFolders\__init__.py:435
-#, python-format
+#, fuzzy, python-format
+#| msgid "Are you sure you want to remove {}?"
 msgid "Are you sure you want to remove %s?"
-msgstr "您确定要删除 %s 吗？"
+msgstr "Вы уверены, что хотите удалить {}?"
 
 #. Translators: Title of the first column of the list view.
 #: addon\globalPlugins\favoriteFolders\__init__.py:514
 msgid "Nickname"
-msgstr "昵称"
+msgstr ""
 
 #. Translators: Title of the second column of the list view.
 #: addon\globalPlugins\favoriteFolders\__init__.py:521
 msgid "Address"
-msgstr "位置"
+msgstr ""
 
 #. Add-on summary/title, usually the user visible name of the add-on
 #. Translators: Summary/title for this add-on
 #. to be shown on installation and add-on information found in add-on store
 #: buildVars.py:21
-#, fuzzy
-#| msgid "Favorite folders - Register favorite folders"
 msgid "Favorite folders and files - Register favorite folders and files"
-msgstr "文件夹收藏夹 - 注册文件夹收藏夹"
+msgstr ""
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-on store
 #: buildVars.py:24
-#, fuzzy
-#| msgid ""
-#| "Register favorite folders to provide quick access to them. Shortcut: "
-#| "WINDOWS+BACKSPACE"
 msgid ""
 "Register favorite folders and files to provide quick access to them. "
 "Shortcuts:\n"
 "WINDOWS+BACKSPACE: Open favorite folders dialog..\n"
 "SHIFT+WINDOWS+BACKSPACE: Open favorite files dialog."
-msgstr "注册文件夹收藏夹，以便快速访问它们。快捷键：Windows+退格键"
+msgstr ""
 
 #. Brief changelog for this version
 #. Translators: what's new content for the add-on version to be shown in the add-on store
@@ -275,8 +265,8 @@ msgid ""
 "Added Chai Chaimee work for favorite files."
 msgstr ""
 
-#~ msgid "&Add folder"
-#~ msgstr "添加文件夹(&A)"
+#~ msgid "Favorite Files"
+#~ msgstr "Избранные файлы"
 
-#~ msgid "&Open folder"
-#~ msgstr "打开收藏夹(&O)"
+#~ msgid "Open Favorite Files dialog"
+#~ msgstr "Открыть диалог избранных файлов"

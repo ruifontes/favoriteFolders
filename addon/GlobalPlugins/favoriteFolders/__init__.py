@@ -34,6 +34,7 @@ try:
 except:
 	from . import pathlib
 	from .pathlib import Path as pathNetwork
+from . init_FavFiles import FavoriteFilesGlobalPlugin
 import addonHandler
 # To start the translation process
 addonHandler.initTranslation()
@@ -52,6 +53,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
 		self.lastForeground = 0
 		self.dialog = None
+		self.favoriteFiles = FavoriteFilesGlobalPlugin()
 
 	def check_path(self, path):
 		# function to check if path starts with a letter or is a directory
@@ -184,7 +186,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		dictFolders = self.readConfig()
 		if dictFolders is None and newFolder is None:
 			# Translators: Announced when the focus is not on the Windows Explorer and there is no registered folders.
-			ui.message (_('You do not have added folders and is not in the windows explorer window to make a record'))
+			ui.message(_('You do not have added folders and is not in the windows explorer window to make a record'))
 			return
 		elif dictFolders is not None:
 			values = dictFolders.values()
@@ -204,6 +206,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.dialog.Show()
 			self.dialog.CentreOnScreen()
 			gui.mainFrame.postPopup()
+
+	@script(
+		# For translators: Message to be announced during Keyboard Help
+		description = _("Opens a dialog box to register and open favorite files."),
+		gesture = "kb:Shift+WINDOWS+Backspace")
+	def script_startFavFiles(self, gesture):
+		self.favoriteFiles.startFavoriteFiles()
 
 	def terminate (self):
 		if self.dialog is not None:
@@ -250,10 +259,10 @@ class FavoriteFoldersDialog(wx.Dialog):
 				self.chkAddress.SetValue(True)
 		sizer_1.Add(self.chkAddress, 0, 0, 0)
 
-		self.addButton = wx.Button(self, wx.ID_ANY, _("&Add folder"))
+		self.addButton = wx.Button(self, wx.ID_ANY, _("&Add"))
 		sizer_1.Add(self.addButton, 0, 0, 0)
 
-		self.openButton = wx.Button(self, wx.ID_ANY, _("&Open folder"))
+		self.openButton = wx.Button(self, wx.ID_ANY, _("&Open"))
 		sizer_1.Add(self.openButton, 0, 0, 0)
 
 		self.pastButton = wx.Button(self, wx.ID_ANY, _("Write in the e&dit box"))
@@ -358,7 +367,10 @@ class FavoriteFoldersDialog(wx.Dialog):
 		index=self.listBox.GetFocusedItem()
 		nickName = self.listBox.GetItemText(index)
 		path = dictFolders [nickName]
-		os.startfile(path)
+		try:
+			os.startfile(path)
+		except Exception as e:
+			gui.messageBox(_("Error opening folder:\n %s") %e, _("Error"), wx.ICON_ERROR)
 
 	def onPast (self, evt):
 		# Simulates typing the folder address in the edit box.

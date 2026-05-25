@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Favorite Folders\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-07-20 23:45+0100\n"
-"PO-Revision-Date: 2023-07-20 23:50+0100\n"
+"POT-Creation-Date: 2026-05-25 14:29+0100\n"
+"PO-Revision-Date: 2026-05-25 14:42+0100\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: cagrid@hotmail.com\n"
 "Language: tr\n"
@@ -11,24 +11,174 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.8\n"
 "X-Poedit-Basepath: c:/users/marcos antonio/appdata/roaming/nvda/addons/"
 "favorite Folders/GlobalPlugins\n"
 "X-Poedit-SearchPath-0: FavoriteFolders\n"
 
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:26
+#, fuzzy
+#| msgid "Favorite folders"
+msgid "Favorite files"
+msgstr "Favori klasörler"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:202
+msgid "Folders cannot be added. Only files are allowed."
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:215
+#, fuzzy
+#| msgid ""
+#| "You do not have added folders and is not in the windows explorer window "
+#| "to make a record"
+msgid ""
+"You have no favorite files and are not in a Windows Explorer window to add "
+"one"
+msgstr ""
+"Kayıtlı klasörünüz yok ve kaydetmek için Windows Gezgini penceresinde "
+"değilsiniz"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:258
+msgid "Display name"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:259
+msgid "Path"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:263
+#: addon\globalPlugins\favoriteFolders\__init__.py:256
+msgid "&Show paths in the list"
+msgstr "Li&stede tam yolları göster"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:266
+msgid "Sort order:"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:270
+msgid "Custom order (drag and pin allowed)"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:271
+msgid "A-Z (uppercase)"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:272
+msgid "Z-A (lowercase)"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:288
+#: addon\globalPlugins\favoriteFolders\__init__.py:262
+msgid "&Add"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:289
+#: addon\globalPlugins\favoriteFolders\__init__.py:265
+msgid "&Open"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:290
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:325
+msgid "&Edit"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:291
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:326
+#: addon\globalPlugins\favoriteFolders\__init__.py:274
+msgid "&Remove"
+msgstr "Kaldı&r"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:322
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:398
+msgid "&Pin to top"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:323
+msgid "Move &up"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:324
+msgid "Move &down"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:396
+msgid "&Unpin"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:422
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:431
+msgid "Unpinned {}"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:473
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:487
+msgid "Pinned {} to top"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:513
+msgid "No file selected to add"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:517
+#, fuzzy
+#| msgid "Enter a nickname for the folder"
+msgid "Enter display name for the file"
+msgstr "Klasör için bir takma ad girin"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:521
+msgid "Display name cannot be empty"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:525
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:567
+msgid "This display name already exists!"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:534
+msgid "Added: {}"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:549
+#, fuzzy
+#| msgid "File not found: %s."
+msgid "File not found"
+msgstr "Dosya bulunamadı: %s."
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:560
+#, fuzzy
+#| msgid "Enter a nickname"
+msgid "Enter new display name"
+msgstr "Entre com um nome de referência para a pasta"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:588
+msgid "Display name updated to {}"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:598
+#, fuzzy
+#| msgid "Are you sure you want to remove %s?"
+msgid "Are you sure you want to remove {}?"
+msgstr "%s'i kaldırmak istediğine emin misin?"
+
+#: addon\globalPlugins\favoriteFolders\init_FavFiles.py:610
+#, fuzzy
+#| msgid "&Remove"
+msgid "Removed {}"
+msgstr "Kaldı&r"
+
 #. Translators: Title of add-on, present in the dialog boxes.
-#: addon\globalPlugins\favoriteFolders\__init__.py:41
+#: addon\globalPlugins\favoriteFolders\__init__.py:45
 msgid "Favorite folders"
 msgstr "Favori klasörler"
 
-#. Translators: Message to be announced during Keyboard Help
-#: addon\globalPlugins\favoriteFolders\__init__.py:124
+#. For translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\favoriteFolders\__init__.py:153
 msgid "Opens a dialog box to register and open favorite folders."
 msgstr ""
 "Sık kullanılan klasörleri kaydetmek veya açmak için bir iletişim kutusu açar."
 
 #. Translators: Announced when the focus is not on the Windows Explorer and there is no registered folders.
-#: addon\globalPlugins\favoriteFolders\__init__.py:172
+#: addon\globalPlugins\favoriteFolders\__init__.py:189
 msgid ""
 "You do not have added folders and is not in the windows explorer window to "
 "make a record"
@@ -36,96 +186,114 @@ msgstr ""
 "Kayıtlı klasörünüz yok ve kaydetmek için Windows Gezgini penceresinde "
 "değilsiniz"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:227
+#. For translators: Message to be announced during Keyboard Help
+#: addon\globalPlugins\favoriteFolders\__init__.py:212
+#, fuzzy
+#| msgid "Opens a dialog box to register and open favorite folders."
+msgid "Opens a dialog box to register and open favorite files."
+msgstr ""
+"Sık kullanılan klasörleri kaydetmek veya açmak için bir iletişim kutusu açar."
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:249
 msgid "Favorite folders list"
 msgstr "Favori klasör listesi"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:234
-msgid "&Show paths in the list"
-msgstr "Li&stede tam yolları göster"
-
-#: addon\globalPlugins\favoriteFolders\__init__.py:240
-msgid "&Add folder"
-msgstr "Klasörü &ekle"
-
-#: addon\globalPlugins\favoriteFolders\__init__.py:243
-msgid "&Open folder"
-msgstr "Klasörü &aç"
-
-#: addon\globalPlugins\favoriteFolders\__init__.py:246
+#: addon\globalPlugins\favoriteFolders\__init__.py:268
 msgid "Write in the e&dit box"
 msgstr "&Düzenleme kutusuna yaz"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:249
+#: addon\globalPlugins\favoriteFolders\__init__.py:271
 msgid "Re&name"
 msgstr "Ye&niden adlandır"
 
-#: addon\globalPlugins\favoriteFolders\__init__.py:252
-msgid "&Remove"
-msgstr "Kaldı&r"
-
 #. Translators: Message dialog box to add a new folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:306
+#: addon\globalPlugins\favoriteFolders\__init__.py:328
 msgid "Enter a nickname for the folder"
 msgstr "Klasör için bir takma ad girin"
 
 #. Translators: Announcement that the folder name already exists in the list.
-#: addon\globalPlugins\favoriteFolders\__init__.py:337
-#: addon\globalPlugins\favoriteFolders\__init__.py:400
+#: addon\globalPlugins\favoriteFolders\__init__.py:359
+#: addon\globalPlugins\favoriteFolders\__init__.py:425
 msgid "There is already a folder with this nickname!"
 msgstr "Bu takma ada sahip bir klasör zaten var!"
 
-#. Translators: Message dialog to rename the nickname  of the selected folder.
 #: addon\globalPlugins\favoriteFolders\__init__.py:373
+#, python-format
+msgid ""
+"Error opening folder:\n"
+" %s"
+msgstr ""
+
+#: addon\globalPlugins\favoriteFolders\__init__.py:373
+msgid "Error"
+msgstr ""
+
+#. Translators: Message dialog to rename the nickname  of the selected folder.
+#: addon\globalPlugins\favoriteFolders\__init__.py:398
 #, python-format
 msgid "Enter a new nickname for %s"
 msgstr "%s için yeni bir takma ad girin"
 
 #. Translators: Message dialog box to remove the selected folder.
-#: addon\globalPlugins\favoriteFolders\__init__.py:410
+#: addon\globalPlugins\favoriteFolders\__init__.py:435
 #, python-format
 msgid "Are you sure you want to remove %s?"
 msgstr "%s'i kaldırmak istediğine emin misin?"
 
 #. Translators: Title of the first column of the list view.
-#: addon\globalPlugins\favoriteFolders\__init__.py:488
+#: addon\globalPlugins\favoriteFolders\__init__.py:514
 msgid "Nickname"
 msgstr "Takma ad"
 
 #. Translators: Title of the second column of the list view.
-#: addon\globalPlugins\favoriteFolders\__init__.py:495
+#: addon\globalPlugins\favoriteFolders\__init__.py:521
 msgid "Address"
 msgstr "Adres"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: buildVars.py:23
-msgid "Favorite folders - Register favorite folders"
+#. Add-on summary/title, usually the user visible name of the add-on
+#. Translators: Summary/title for this add-on
+#. to be shown on installation and add-on information found in add-on store
+#: buildVars.py:21
+#, fuzzy
+#| msgid "Favorite folders - Register favorite folders"
+msgid "Favorite folders and files - Register favorite folders and files"
 msgstr "Favori klasörler - Favori klasörleri kaydedin"
 
 #. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
+#. Translators: Long description to be shown for this add-on on add-on information from add-on store
+#: buildVars.py:24
+#, fuzzy
+#| msgid ""
+#| "Register favorite folders to provide quick access to them. Shortcut: "
+#| "WINDOWS+BACKSPACE"
 msgid ""
-"Register favorite folders to provide quick access to them. Shortcut: "
-"WINDOWS+BACKSPACE"
+"Register favorite folders and files to provide quick access to them. "
+"Shortcuts:\n"
+"WINDOWS+BACKSPACE: Open favorite folders dialog..\n"
+"SHIFT+WINDOWS+BACKSPACE: Open favorite files dialog."
 msgstr ""
 "Hızlı erişim sağlamak için favori klasörleri kaydedin. Kısayol: WINDOWS+GERİ "
 "silme"
+
+#. Brief changelog for this version
+#. Translators: what's new content for the add-on version to be shown in the add-on store
+#: buildVars.py:31
+msgid ""
+"Set compatibility with NVDA 2026.1;\n"
+"Added Chai Chaimee work for favorite files."
+msgstr ""
+
+#~ msgid "&Add folder"
+#~ msgstr "Klasörü &ekle"
+
+#~ msgid "&Open folder"
+#~ msgstr "Klasörü &aç"
 
 #~ msgid "Ab&out"
 #~ msgstr "&Hakkında"
 
 #~ msgid "&Close"
 #~ msgstr "&Kapat"
-
-#, python-format
-#~ msgid "File not found: %s."
-#~ msgstr "Dosya bulunamadı: %s."
-
-#~ msgid "Enter a nickname"
-#~ msgstr "Entre com um nome de referência para a pasta"
 
 #~ msgid "&Past in editable text"
 #~ msgstr "&Colar em caixa de texto"
